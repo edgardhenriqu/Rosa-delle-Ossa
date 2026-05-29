@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosa delle Ossa ✦ Catálogo de Tiragens</title>
+  <meta name="description" content="Leituras de Tarot, Lenormand e Oráculos com Rosa delle Ossa — Maria Luiza Rosabone. Tiragens que iluminam caminhos, revelam verdades e guiam a alma.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Cosmic background layer -->
+<div class="cosmic-bg" aria-hidden="true"></div>
+
+<!-- Floating glow orbs -->
+<div class="orb orb-1" aria-hidden="true"></div>
+<div class="orb orb-2" aria-hidden="true"></div>
+<div class="orb orb-3" aria-hidden="true"></div>
+
+<!-- Animated stars background -->
+<div class="stars-bg" id="starsContainer"></div>
+
+<!-- Navigation -->
+<nav>
+  <a href="#hero">Início</a>
+  <a href="#como">Como Solicitar</a>
+  <a href="#precos">Preços</a>
+  <a href="#baralhos">Baralhos</a>
+  <a href="#metodos">Métodos</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <!-- Layered backgrounds -->
+  <div class="hero-bg-image" aria-hidden="true"></div>
+  <div class="hero-bg-gradient" aria-hidden="true"></div>
+
+  <!-- Real logo -->
+  <div class="logo-emblem">
+    <img src="assets/imagens/logo.png" alt="Rosa delle Ossa — Logo">
+  </div>
+
+  <h1 class="brand">Rosa delle Ossa</h1>
+  <p class="hero-sub">Tarot · Lenormand · Oráculos</p>
+  <p class="hero-tagline">Leituras que iluminam caminhos, revelam verdades e guiam a alma.</p>
+
+  <div>
+    <a href="#precos" class="cta-btn">Ver Tiragens</a>
+    <a href="#contato" class="cta-btn">Solicitar Leitura</a>
+  </div>
+
+  <div class="moon-divider" style="margin-top:3.5rem;">
+    <span>☽ ✦ ☾</span>
+  </div>
+</section>
+
+<!-- ══════ DECK SHOWCASE (visual strip) ══════ -->
+<div class="deck-showcase">
+  <div class="deck-showcase-inner">
+    <div class="deck-img-panel">
+      <img src="assets/imagens/tarot_hero.png" alt="Cartas de Tarot e Lenormand">
+      <div class="panel-overlay">
+        <span class="panel-label">Tarot · Lenormand · Oráculos</span>
+      </div>
+    </div>
+    <div class="deck-img-panel">
+      <img src="assets/imagens/cigano_deck.png" alt="Baralho Cigano">
+      <div class="panel-overlay">
+        <span class="panel-label">Baralho Cigano · Sibila Italiana</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ COMO SOLICITAR ══════ -->
+<section id="como">
+  <div class="section-inner">
+    <h2 class="section-title reveal">Como Solicitar uma Tiragem</h2>
+    <p class="section-subtitle reveal">Passo a Passo</p>
+
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <h3>Escolha a Tiragem</h3>
+        <p>Dê uma olhadinha no catálogo e veja qual método ou pergunta combina melhor com o que você deseja saber no momento.</p>
+      </div>
+
+      <div class="step-card reveal">
+        <div class="step-num">2</div>
+        <h3>Anote as Informações</h3>
+        <p>Você vai precisar me enviar:</p>
+        <ul>
+          <li>A tiragem escolhida</li>
+          <li>Nome(s) dos envolvidos</li>
+          <li>Seu contexto / situação</li>
+          <li>Suas perguntas (se tiver)</li>
+        </ul>
+      </div>
+
+      <div class="step-card reveal">
+        <div class="step-num">3</div>
+        <h3>Realize o Pagamento</h3>
+        <p>Pagamento via <strong style="color:var(--gold-light)">PIX</strong><br>Chave: (11) 96852-8778<br>(Chave celular)</p>
+      </div>
+
+      <div class="step-card reveal">
+        <div class="step-num">4</div>
+        <h3>Envie pelo WhatsApp</h3>
+        <p>Mande a tiragem escolhida + comprovante + contexto para:</p>
+        <p style="color:var(--gold-light); font-family:'Cinzel',serif; margin-top:0.5rem;">📞 (11) 96852-8778</p>
+      </div>
+
+      <div class="step-card reveal">
+        <div class="step-num">5</div>
+        <h3>Aguarde sua Leitura</h3>
+        <p>⏳ O prazo de envio é de até <strong style="color:var(--gold-light)">2 dias</strong> após o comprovante, mas normalmente sai dentro de 24h!</p>
+      </div>
+    </div>
+
+    <div class="urgency-note reveal">
+      ✦ Não quer esperar? Atendo com <strong style="color:var(--gold-light)">taxa de urgência de R$20</strong> — sua leitura é enviada o mais rápido possível dentro do meu horário de atendimento.
+    </div>
+    
+    <div style="margin-top: 5rem;" id="solicitar-form">
+      <h2 class="section-title reveal">Monte sua Tiragem</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 2rem;">Preencha os dados abaixo e envie direto para o WhatsApp</p>
+      
+      <div class="form-container reveal">
+        <form id="orderForm">
+          <div class="form-group">
+            <label>Qual tiragem você deseja?</label>
+            <select id="f-tiragem" required>
+              <option value="">Selecione uma opção...</option>
+              <optgroup label="Tiragem por Perguntas">
+                <option value="Baralho Cigano / Tarot">Baralho Cigano / Tarot</option>
+                <option value="Sibila Italiana">Sibila Italiana</option>
+              </optgroup>
+              <optgroup label="Métodos">
+                <option value="Templo Afrodite (R$50)">Templo Afrodite (R$50)</option>
+                <option value="Qual Caminho Seguir (R$45)">Qual Caminho Seguir (R$45)</option>
+                <option value="Previsões da Semana (R$40)">Previsões da Semana (R$40)</option>
+                <option value="Previsões do Mês (R$60)">Previsões do Mês (R$60)</option>
+                <option value="Leitura Geral (R$65)">Leitura Geral (R$65)</option>
+                <option value="Leitura Financeira (R$50)">Leitura Financeira (R$50)</option>
+                <option value="Leitura Amor Próprio (R$50)">Leitura Amor Próprio (R$50)</option>
+                <option value="Decodificando Alguém (R$70)">Decodificando Alguém (R$70)</option>
+                <option value="Despertar Espiritual (R$70)">Despertar Espiritual (R$70)</option>
+                <option value="Raiz Ancestral (R$65)">Raiz Ancestral (R$65)</option>
+                <option value="Vidas Passadas (R$80)">Vidas Passadas (R$80)</option>
+              </optgroup>
+              <optgroup label="Métodos Especiais">
+                <option value="Retrato Oculto (R$80)">Retrato Oculto (R$80)</option>
+                <option value="Desconhecido do Destino (R$85)">Desconhecido do Destino (R$85)</option>
+                <option value="RoseHeart (R$80)">RoseHeart (R$80)</option>
+                <option value="RoseSoul (R$85)">RoseSoul (R$85)</option>
+                <option value="Ciclos Kármicos (R$80)">Ciclos Kármicos (R$80)</option>
+                <option value="Ecos da Eternidade (R$85)">Ecos da Eternidade (R$85)</option>
+              </optgroup>
+            </select>
+          </div>
+          
+          <div class="form-group" id="grupo-qtd-perguntas" style="display:none;">
+            <label>Quantidade de Perguntas</label>
+            <select id="f-qtd">
+              <option value="">Selecione a quantidade...</option>
+              <option value="1">1 Pergunta</option>
+              <option value="2">2 Perguntas</option>
+              <option value="3">3 Perguntas</option>
+              <option value="5">5 Perguntas</option>
+            </select>
+          </div>
+          <p id="preco-preview" style="margin-top:-0.5rem; margin-bottom:1.5rem; color:var(--gold-light); font-family:'Cinzel',serif;"></p>
+          
+          <div class="form-group">
+            <label>Seu Nome</label>
+            <input type="text" id="f-nome" placeholder="Digite seu nome completo" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Nome dos Envolvidos (se houver)</label>
+            <input type="text" id="f-envolvidos" placeholder="Ex: João Silva">
+          </div>
+          
+          <div class="form-group">
+            <label>Seu Contexto / Situação</label>
+            <textarea id="f-contexto" rows="3" placeholder="Conte um pouco sobre o que está acontecendo..." required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>Suas Perguntas (se houver)</label>
+            <textarea id="f-perguntas" rows="3" placeholder="Digite suas perguntas aqui..."></textarea>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" id="f-urgencia">
+              Desejo Taxa de Urgência (+R$20) para receber o mais rápido possível
+            </label>
+          </div>
+          
+          <button type="submit" class="submit-btn">Enviar para o WhatsApp ✦</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PREÇOS ══════ -->
+<section id="precos">
+  <div class="section-inner">
+    <h2 class="section-title reveal">Menu de Tiragens</h2>
+    <p class="section-subtitle reveal">Escolha a leitura ideal para o seu momento</p>
+
+    <!-- Baralho Cigano / Lenormand / Tarot -->
+    <div class="price-category reveal">
+      <h3>Baralho Cigano · Lenormand · Tarot</h3>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="label">1 Pergunta</div>
+          <div class="price">R$15</div>
+        </div>
+        <div class="price-card">
+          <div class="label">2 Perguntas</div>
+          <div class="price">R$25</div>
+        </div>
+        <div class="price-card">
+          <div class="label">3 Perguntas</div>
+          <div class="price">R$35</div>
+        </div>
+        <div class="price-card">
+          <div class="label">5 Perguntas</div>
+          <div class="price">R$50</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sibila Italiana -->
+    <div class="price-category reveal">
+      <h3>Sibila Italiana</h3>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="label">1 Pergunta</div>
+          <div class="price">R$18</div>
+        </div>
+        <div class="price-card">
+          <div class="label">2 Perguntas</div>
+          <div class="price">R$32</div>
+        </div>
+        <div class="price-card">
+          <div class="label">3 Perguntas</div>
+          <div class="price">R$45</div>
+        </div>
+        <div class="price-card">
+          <div class="label">5 Perguntas</div>
+          <div class="price">R$65</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Métodos -->
+    <div class="price-category reveal">
+      <h3>Métodos</h3>
+      <div class="methods-price-grid">
+        <div class="method-price-item">
+          <span class="m-name">Templo Afrodite</span>
+          <span class="m-price">R$50</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Qual Caminho Seguir</span>
+          <span class="m-price">R$45</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Previsões da Semana</span>
+          <span class="m-price">R$40</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Previsões do Mês</span>
+          <span class="m-price">R$60</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Leitura Geral</span>
+          <span class="m-price">R$65</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Leitura Financeira</span>
+          <span class="m-price">R$50</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Leitura Amor Próprio</span>
+          <span class="m-price">R$50</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Decodificando Alguém</span>
+          <span class="m-price">R$70</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Despertar Espiritual</span>
+          <span class="m-price">R$70</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Raiz Ancestral</span>
+          <span class="m-price">R$65</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Leitura de Vidas Passadas</span>
+          <span class="m-price">R$80</span>
+        </div>
+      </div>
+      <p class="price-note">✦ Alguns métodos utilizam um oráculo especial em conjunto com o tarot/lenormand.</p>
+    </div>
+
+    <!-- Métodos Especiais -->
+    <div class="price-category reveal">
+      <h3>Métodos Especiais</h3>
+      <p class="price-note" style="margin-bottom:1rem;">Combino o Baralho Cigano/Lenormand + um Oráculo Especial</p>
+      <div class="methods-price-grid">
+        <div class="method-price-item">
+          <span class="m-name">Retrato Oculto</span>
+          <span class="m-price">R$80</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Desconhecido do Destino</span>
+          <span class="m-price">R$85</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">RoseHeart</span>
+          <span class="m-price">R$80</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">RoseSoul</span>
+          <span class="m-price">R$85</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Ciclos Kármicos</span>
+          <span class="m-price">R$80</span>
+        </div>
+        <div class="method-price-item">
+          <span class="m-name">Ecos da Eternidade</span>
+          <span class="m-price">R$85</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ BARALHOS ══════ -->
+<section id="baralhos">
+  <div class="section-inner" style="text-align:center;">
+    <h2 class="section-title reveal">Baralhos Utilizados</h2>
+    <p class="section-subtitle reveal">Uma coleção cuidadosamente escolhida para cada leitura</p>
+    <div class="deck-grid reveal">
+      <span class="deck-pill">Romantic Lenormand</span>
+      <span class="deck-pill">Grand Tableau Lenormand</span>
+      <span class="deck-pill">Baralho Cigano Amanhecer</span>
+      <span class="deck-pill">Tarot Waite Clássico</span>
+      <span class="deck-pill">Sibila Italiana</span>
+      <span class="deck-pill">Oráculo Rosebelle</span>
+      <span class="deck-pill">Oráculo de las Vidas Pasadas</span>
+      <span class="deck-pill">Oráculo Who Is It</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ MÉTODOS DETALHADOS ══════ -->
+<section id="metodos">
+  <div class="section-inner">
+    <h2 class="section-title reveal">Métodos em Detalhe</h2>
+    <p class="section-subtitle reveal">Clique em cada método para conhecer sua estrutura</p>
+
+    <div class="methods-grid">
+
+      <!-- Templo Afrodite -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Templo Afrodite</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$50</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura amorosa completa que analisa os dois lados da relação: pensamentos, emoções, desejos e futuro do vínculo.</p>
+          <h4>Estrutura — 7 Cartas</h4>
+          <ol>
+            <li>Pensamentos e intenções (pessoa 1)</li>
+            <li>Sentimentos e emoções (pessoa 1)</li>
+            <li>Atração sexual e física (pessoa 1)</li>
+            <li>Pensamentos e intenções (pessoa 2)</li>
+            <li>Sentimentos e emoções (pessoa 2)</li>
+            <li>Atração sexual e física (pessoa 2)</li>
+            <li>Futuro do casal</li>
+          </ol>
+          <div class="result-box">Mostra a verdade energética entre duas pessoas — o que cada um pensa, sente, deseja e para onde a relação está caminhando.</div>
+        </div>
+      </div>
+
+      <!-- Qual Caminho Seguir -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Qual Caminho Seguir</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$45</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura direcionada para quem está em dúvida entre escolhas, rumos ou possibilidades.</p>
+          <h4>Estrutura</h4>
+          <ol>
+            <li>Energia atual</li>
+            <li>Caminho A</li>
+            <li>Caminho B</li>
+            <li>Conselho final</li>
+          </ol>
+          <p style="font-size:0.82rem;opacity:0.7;margin-top:0.5rem;font-style:italic;">A estrutura é adaptada de acordo com a quantidade de caminhos.</p>
+          <div class="result-box">Clareza para tomar decisões importantes, enxergando o que cada escolha realmente oferece.</div>
+        </div>
+      </div>
+
+      <!-- Previsões da Semana -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Previsões da Semana</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$40</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura rápida mostrando o clima dos próximos 7 dias.</p>
+          <h4>Estrutura — 5 Cartas</h4>
+          <ol>
+            <li>Energia da semana — vibração geral e humor predominante</li>
+            <li>Campo emocional — relações, sentimentos e bem-estar</li>
+            <li>Trabalho / estudos / finanças — oportunidades e alertas</li>
+            <li>Acontecimentos da semana — eventos importantes ou surpresas</li>
+            <li>Conselho espiritual — a melhor postura para atravessar a semana</li>
+          </ol>
+          <div class="result-box">Visão simples e direta para agir com mais foco e clareza.</div>
+        </div>
+      </div>
+
+      <!-- Previsões do Mês -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Previsões do Mês</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$60</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Panorama completo das energias que irão reger o mês.</p>
+          <h4>Estrutura — 6 Cartas</h4>
+          <ol>
+            <li>Tema central — vibração principal do mês</li>
+            <li>Vida pessoal — emoções, relações e autoestima</li>
+            <li>Trabalho &amp; dinheiro — oportunidades e alertas</li>
+            <li>Desafios — o que pode exigir cautela</li>
+            <li>Oportunidades — áreas favorecidas e movimentos positivos</li>
+            <li>Conselho — direcionamento para aproveitar o mês</li>
+          </ol>
+          <div class="result-box">Visão clara e objetiva do que esperar ao longo do mês.</div>
+        </div>
+      </div>
+
+      <!-- Leitura Geral -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Leitura Geral</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$65</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Análise completa das principais áreas da sua vida no momento atual.</p>
+          <h4>Estrutura — 6 Cartas</h4>
+          <ol>
+            <li>Energia atual — como você está vibrando e o que isso atrai</li>
+            <li>Vida pessoal e emocional — sentimentos, relações, autoestima</li>
+            <li>Caminhos profissionais / estudos — tendências e oportunidades</li>
+            <li>Financeiro — estabilidade e fluxo de prosperidade</li>
+            <li>Espiritualidade — proteção, avisos ou aberturas</li>
+            <li>Conselho final — direção para melhorar as áreas analisadas</li>
+          </ol>
+          <div class="result-box">Um panorama claro do seu momento presente, revelando caminhos, desafios e o que pode ser ajustado ou aproveitado agora.</div>
+        </div>
+      </div>
+
+      <!-- Leitura Financeira -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Leitura Financeira</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$50</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Análise focada nas suas energias materiais, dinheiro e prosperidade.</p>
+          <h4>Estrutura — 6 Cartas</h4>
+          <ol>
+            <li>Energia financeira atual — como você vibra no campo material</li>
+            <li>Fluxo de entrada — o que favorece ganhos e oportunidades</li>
+            <li>Fluxo de saída — gastos, perdas ou pontos de atenção</li>
+            <li>Obstáculos financeiros — bloqueios e padrões limitantes</li>
+            <li>Caminho de prosperidade — como crescer e equilibrar o financeiro</li>
+            <li>Conselho final — direção prática e espiritual</li>
+          </ol>
+          <div class="result-box">Clareza sobre sua situação financeira e o que pode ser ajustado para melhorar ganhos e estabilidade.</div>
+        </div>
+      </div>
+
+      <!-- Amor Próprio -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Leitura Amor Próprio</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$50</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura dedicada à sua relação consigo mesma: autoestima, cura e fortalecimento emocional.</p>
+          <h4>Estrutura — 6 Cartas</h4>
+          <ol>
+            <li>Como você está se enxergando — autopercepção atual</li>
+            <li>Feridas ou inseguranças — o que dói e limita sua autoestima</li>
+            <li>Seus pontos fortes — talentos e qualidades a reconhecer</li>
+            <li>O que precisa ser curado — padrões, traumas e bloqueios</li>
+            <li>Como desenvolver seu amor próprio — caminhos de fortalecimento</li>
+            <li>Conselho final — mensagem para elevar vibração e autocuidado</li>
+          </ol>
+          <div class="result-box">Uma leitura de cura e autoconhecimento que mostra como você pode se tratar com mais carinho, respeito e amor.</div>
+        </div>
+      </div>
+
+      <!-- Decodificando Alguém -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Decodificando Alguém</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$70</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura profunda que revela quem uma pessoa realmente é, o que pensa e sente por você, suas intenções e próximos movimentos.</p>
+          <h4>Estrutura — 10 Cartas</h4>
+          <ol>
+            <li>Quem essa pessoa é — essência, energia e comportamento natural</li>
+            <li>O que ela pensa sobre você — percepções e expectativas</li>
+            <li>O que ela sente por você — emoções reais e intensidade do laço</li>
+            <li>As intenções dela — o que busca, pretende ou evita</li>
+            <li>O que demonstra vs. o que esconde — contraste entre atitudes</li>
+            <li>Próximos movimentos — ações prováveis ou mudanças</li>
+            <li>Se existe outra pessoa — interferências ou envolvimento paralelo</li>
+            <li>Aparência e energia da outra pessoa (se existir)</li>
+            <li>Como criar conexão — atitude que favorece aproximação</li>
+            <li>Conselho para lidar com essa pessoa</li>
+          </ol>
+          <div class="result-box">Revelação completa da energia, intenções e movimentos de quem você deseja entender.</div>
+        </div>
+      </div>
+
+      <!-- Despertar Espiritual -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Despertar Espiritual</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$70</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Tiragem focada em entender seu momento espiritual, dons, bloqueios e caminhos de evolução.</p>
+          <h4>Estrutura — 7 Cartas</h4>
+          <ol>
+            <li>Sua energia espiritual atual — como você vibra e em que fase está</li>
+            <li>Dons e capacidades — sensibilidades, mediunidade e potenciais</li>
+            <li>Bloqueios e interferências — o que trava sua evolução</li>
+            <li>Orientações do plano espiritual — recados e direções importantes</li>
+            <li>Qual caminho seguir — foco ideal para expandir sua espiritualidade</li>
+            <li>Como fortalecer sua conexão — o que eleva sua vibração</li>
+            <li>Conselho final — direcionamento claro do plano espiritual</li>
+          </ol>
+          <div class="result-box">Uma leitura profunda que revela seu momento espiritual, seus dons, seus bloqueios e o caminho ideal para fortalecer sua evolução.</div>
+        </div>
+      </div>
+
+      <!-- Raiz Ancestral -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Raiz Ancestral</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$65</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Uma leitura voltada para revelar a força da sua linhagem espiritual.</p>
+          <h4>Estrutura — 8 Cartas</h4>
+          <ol>
+            <li>Raiz ancestral — o ponto de origem da sua linhagem</li>
+            <li>Herança energética — o que corre no seu sangue espiritual</li>
+            <li>Sabedoria transmitida — o ensinamento que acompanha seu caminho</li>
+            <li>Caminho de conexão — a melhor forma de acessar sua ancestralidade</li>
+            <li>Foco espiritual — onde direcionar sua energia agora</li>
+            <li>Ferida ancestral — o que pesa, se repete ou precisa ser curado no clã</li>
+            <li>Legado ancestral — o que você veio manifestar honrando seus antepassados</li>
+            <li>Mensagem ancestral — orientação final da sua linhagem</li>
+          </ol>
+          <div class="result-box">Revela de onde você veio, o que sua linhagem carrega, o que deve ser curado e qual força ancestral está pronta para despertar em você.</div>
+        </div>
+      </div>
+
+      <!-- Vidas Passadas -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Leitura de Vidas Passadas</h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$80</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Focada em revelar quem você foi, o que viveu e como isso molda sua vida atual.</p>
+          <h4>Estrutura — 9 Cartas</h4>
+          <ol>
+            <li>Quem você foi na vida passada — essência e papel nessa existência</li>
+            <li>Onde essa vida aconteceu — cenário e época</li>
+            <li>Seus maiores desafios — dores e aprendizados difíceis</li>
+            <li>Suas conquistas — talentos e forças dessa vida</li>
+            <li>Como essa vida terminou — energia final e fechamento do ciclo</li>
+            <li>Como influencia sua vida atual — dons, padrões ou repetições</li>
+            <li>O que precisa ser curado — carma, traumas ou bloqueios</li>
+            <li>O que você deve resgatar — potenciais e forças esquecidas</li>
+            <li>Conselho final — orientação para integrar essa vida</li>
+          </ol>
+          <div class="result-box">Revela sua história reencarnatória, mostrando o que veio com você, o que precisa de cura e o que pode ser resgatado.</div>
+        </div>
+      </div>
+
+      <!-- Retrato Oculto -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Retrato Oculto <span class="badge-especial">Especial</span></h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$80</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura que cria um retrato-falado completo usando o Who Is It (aparência) + Baralho Cigano (energia). Descreve visual, postura, estilo e a vibração espiritual de uma pessoa conectada a você.</p>
+          <h4>Estrutura — 6 Cartas</h4>
+          <ol>
+            <li>Aparência geral — visual e impressão inicial</li>
+            <li>Traço marcante — detalhe que se destaca</li>
+            <li>Corpo &amp; postura — constituição e jeito de se portar</li>
+            <li>Estilo / vibe — estética e energia visual</li>
+            <li>Detalhe oculto — característica sutil</li>
+            <li>Como reconhecer — sinal prático para identificação</li>
+          </ol>
+          <div class="result-box">Um retrato físico e energético completo para reconhecer a presença que se conecta a você, seja alguém que já existe ou alguém prestes a surgir.</div>
+        </div>
+      </div>
+
+      <!-- Desconhecido do Destino -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Desconhecido do Destino <span class="badge-especial">Especial</span></h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$85</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura profunda que descreve fisicamente e energeticamente uma pessoa ligada ao seu destino — conexão kármica, alma parceira ou encontro marcante previsto no seu caminho.</p>
+          <h4>Estrutura — 6 Cartas</h4>
+          <ol>
+            <li>Rosto — traços faciais predominantes</li>
+            <li>Corpo — constituição e postura</li>
+            <li>Estilo — estética e energia visual</li>
+            <li>Mistério / sombra — algo que a aparência pode ocultar</li>
+            <li>Por que surge — motivo energético do encontro</li>
+            <li>Sinal de reconhecimento — marca visual que confirma quem é</li>
+          </ol>
+          <div class="result-box">Uma descrição física + espiritual da pessoa destinada a cruzar seu caminho, junto dos sinais que permitirão reconhecê-la.</div>
+        </div>
+      </div>
+
+      <!-- RoseHeart -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>RoseHeart <span class="badge-especial">Especial</span></h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$80</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura sobre emoções, amor próprio, relacionamentos e vínculos afetivos com o Oráculo Rosebelle.</p>
+          <h4>Estrutura — 12 Cartas</h4>
+          <ol>
+            <li>Coração atual — sentimentos predominantes</li>
+            <li>Amor próprio — autoestima e valorização pessoal</li>
+            <li>Desejo oculto — emoções não expressas</li>
+            <li>Medo ou ferida — bloqueios emocionais</li>
+            <li>Relação presente — vínculos importantes</li>
+            <li>Influência externa — pessoas ou situações ao redor</li>
+            <li>Comunicação emocional — expressão de sentimentos</li>
+            <li>Conexão espiritual — percepção energética do amor</li>
+            <li>Intuição afetiva — orientação interna</li>
+            <li>Obstáculo no amor — o que impede o fluxo</li>
+            <li>Caminho de cura — como liberar bloqueios</li>
+            <li>Futuro afetivo — possibilidades de relacionamento</li>
+          </ol>
+          <div class="result-box">Leitura que revela emoções, cura feridas do coração e indica caminhos para relacionamentos mais saudáveis e conscientes.</div>
+        </div>
+      </div>
+
+      <!-- RoseSoul -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>RoseSoul <span class="badge-especial">Especial</span></h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$85</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura de autoconhecimento, magnetismo pessoal e energia emocional com o Oráculo Rosebelle.</p>
+          <h4>Estrutura — 12 Cartas</h4>
+          <ol>
+            <li>Essência atual — sua energia predominante</li>
+            <li>Potencial oculto — talentos e dons</li>
+            <li>Sombra emocional — sentimentos ocultos</li>
+            <li>Desafio atual — obstáculos</li>
+            <li>Força emergente — qualidades se fortalecendo</li>
+            <li>Vibração no amor — atração afetiva</li>
+            <li>Vibração social — presença no mundo</li>
+            <li>Olhar espiritual — percepção energética</li>
+            <li>Magnetismo pessoal — charme natural</li>
+            <li>Bloqueio interno — limites emocionais</li>
+            <li>Movimento de desbloqueio — ação liberadora</li>
+            <li>Próximo florescimento — oportunidades futuras</li>
+          </ol>
+          <div class="result-box">Leitura clara que revela seu caminho de evolução, autocura e florescimento pessoal.</div>
+        </div>
+      </div>
+
+      <!-- Ciclos Kármicos -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Ciclos Kármicos <span class="badge-especial">Especial</span></h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$80</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura profunda para entender padrões repetidos, laços antigos, dívidas emocionais e o que sua alma está tentando resolver nesta fase.</p>
+          <h4>Estrutura — 9 Cartas</h4>
+          <ol>
+            <li>Raiz kármica — de onde o padrão nasceu</li>
+            <li>Padrão repetido — o que continua voltando</li>
+            <li>Lição principal — o que o universo quer que você aprenda</li>
+            <li>Memória antiga — emoção ou evento que ainda vibra</li>
+            <li>Apego oculto — o que te prende energeticamente</li>
+            <li>Como quebrar o ciclo — ação que liberta</li>
+            <li>Ajuda espiritual — o suporte invisível disponível</li>
+            <li>Consequência da cura — o impacto positivo imediato</li>
+            <li>Destino após a liberação — o caminho novo que se abre</li>
+          </ol>
+          <div class="result-box">Leitura clara que revela seu caminho de evolução, autocura e florescimento pessoal após a quebra dos ciclos.</div>
+        </div>
+      </div>
+
+      <!-- Ecos da Eternidade -->
+      <div class="method-card reveal" onclick="toggleMethod(this)">
+        <div class="method-header">
+          <h3>Ecos da Eternidade <span class="badge-especial">Especial</span></h3>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="m-tag">R$85</span>
+            <span class="toggle-icon">›</span>
+          </div>
+        </div>
+        <div class="method-body">
+          <p class="method-desc">Leitura focada em vidas passadas, conexões espirituais e laços antigos que ressoam até hoje.</p>
+          <h4>Estrutura — 10 Cartas</h4>
+          <ol>
+            <li>Quem você foi — energia predominante dessa vida passada</li>
+            <li>O que viveu — tema central daquela existência</li>
+            <li>Ferida antiga — o que marcou sua alma</li>
+            <li>Talento herdado — habilidade trazida para esta vida</li>
+            <li>Ligação espiritual — conexão antiga (alma gêmea / vínculo)</li>
+            <li>Como isso ecoa hoje — impacto no presente</li>
+            <li>O que deve ser resgatado — força ou sabedoria esquecida</li>
+            <li>O que deve ser liberado — peso, trauma, dívida</li>
+            <li>Integração — como harmonizar passado e presente</li>
+            <li>Propósito eterno — lição que acompanha sua alma</li>
+          </ol>
+          <div class="result-box">Revela uma vida passada que ainda ecoa hoje, mostrando a ferida principal, o aprendizado pendente e os laços kármicos ainda ativos.</div>
+        </div>
+      </div>
+
+    </div><!-- /methods-grid -->
+  </div>
+</section>
+
+<!-- ══════ CONTATO ══════ -->
+<section id="contato">
+  <div class="section-inner">
+    <h2 class="section-title reveal">Entre em Contato</h2>
+    <p class="section-subtitle reveal">Sua leitura te espera ✦</p>
+
+    <div class="contact-box reveal">
+      <div class="contact-symbol" aria-hidden="true">🌹</div>
+
+      <div class="contact-item">
+        <div>
+          <p class="contact-label">WhatsApp · Atendimento</p>
+          <a href="https://wa.me/5511968528778" target="_blank">(11) 96852-8778</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div>
+          <p class="contact-label">TikTok</p>
+          <a href="https://www.tiktok.com/@rosa.delleossa" target="_blank">@rosa.delleossa</a>
+        </div>
+      </div>
+
+      <div class="pix-block">
+        <p class="contact-label">Pagamento via PIX</p>
+        <p class="pix-key">(11) 96852-8778</p>
+        <p style="font-size:0.82rem;opacity:0.65;margin-top:0.4rem;">Chave celular · Maria Luiza Rosabone</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  ✦ Rosa delle Ossa · Maria Luiza Rosabone · Tarot · Lenormand · Oráculos ✦
+</footer>
+
+<!-- Main Script -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
