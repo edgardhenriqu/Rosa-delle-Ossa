@@ -124,10 +124,28 @@ nav a {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   transition: color 0.3s, text-shadow 0.3s;
+  position: relative;
+  padding-bottom: 3px;
 }
-nav a:hover {
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+  transition: left 0.35s ease, right 0.35s ease;
+}
+nav a:hover,
+nav a.active {
   color: var(--gold-pale);
   text-shadow: 0 0 12px rgba(201,160,64,0.6);
+}
+nav a:hover::after,
+nav a.active::after {
+  left: 0;
+  right: 0;
 }
 
 /* ══════════════════════════════════════════
@@ -149,6 +167,16 @@ section { position: relative; z-index: 2; }
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 30px rgba(201,160,64,0.3);
+}
+.section-title::after {
+  content: '☽ ✦ ☾';
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.45em;
+  color: var(--gold);
+  opacity: 0.75;
+  margin-top: 0.6rem;
+  text-shadow: 0 0 12px rgba(201,160,64,0.4);
 }
 .section-subtitle {
   text-align: center;
@@ -279,11 +307,15 @@ h1.brand {
   font-family: 'Cinzel Decorative', serif;
   font-size: clamp(2rem, 6vw, 3.8rem);
   font-weight: 700;
-  color: var(--gold-light);
   letter-spacing: 0.04em;
   line-height: 1.15;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 40px rgba(201,160,64,0.4), 0 2px 4px rgba(0,0,0,0.5);
+  /* Ouro em degradê — brilho de folha dourada */
+  background: linear-gradient(180deg, var(--gold-pale) 0%, var(--gold-light) 40%, var(--gold) 72%, #a67c2e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 28px rgba(201,160,64,0.35)) drop-shadow(0 2px 3px rgba(0,0,0,0.5));
 }
 .hero-sub {
   font-family: 'Cinzel', serif;
@@ -332,6 +364,20 @@ h1.brand {
   box-shadow: 0 0 24px rgba(201,160,64,0.4);
 }
 .cta-btn:hover::before { opacity: 1; }
+
+/* CTA principal — ação de conversão em destaque */
+.cta-btn.primary {
+  background: linear-gradient(160deg, var(--gold-light) 0%, var(--gold) 100%);
+  color: var(--navy);
+  font-weight: 600;
+  border-color: var(--gold-light);
+  box-shadow: 0 0 22px rgba(201,160,64,0.3);
+}
+.cta-btn.primary:hover {
+  background: var(--gold-pale);
+  border-color: var(--gold-pale);
+  box-shadow: 0 0 36px rgba(201,160,64,0.55);
+}
 
 /* Moon Divider */
 .moon-divider {
@@ -470,7 +516,10 @@ h1.brand {
 /* ══════════════════════════════════════════
    PRICE MENU
    ══════════════════════════════════════════ */
-#precos { background: transparent; }
+/* Véu translúcido para acalmar o fundo cósmico e manter a leitura */
+#precos {
+  background: linear-gradient(to bottom, var(--navy) 0%, rgba(8,14,42,0.78) 30%, rgba(8,14,42,0.78) 70%, var(--navy) 100%);
+}
 .price-category { margin-bottom: 3rem; }
 .price-category h3 {
   font-family: 'Cinzel', serif;
@@ -495,12 +544,13 @@ h1.brand {
   text-align: center;
   background: rgba(14,28,82,0.4);
   backdrop-filter: blur(6px);
-  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 .price-card:hover {
   border-color: var(--gold);
   background: rgba(14,28,82,0.7);
-  box-shadow: 0 0 18px rgba(201,160,64,0.12);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35), 0 0 18px rgba(201,160,64,0.12);
+  transform: translateY(-4px);
 }
 .price-card .label {
   font-family: 'Cinzel', serif;
@@ -693,7 +743,7 @@ h1.brand {
    METHODS (detailed)
    ══════════════════════════════════════════ */
 #metodos {
-  background: transparent;
+  background: linear-gradient(to bottom, var(--navy) 0%, rgba(8,14,42,0.78) 30%, rgba(8,14,42,0.78) 70%, var(--navy) 100%);
   position: relative;
 }
 #metodos::before {
@@ -755,7 +805,14 @@ h1.brand {
   padding: 0 1.6rem 1.4rem;
   display: none;
 }
-.method-body.open { display: block; }
+.method-body.open {
+  display: block;
+  animation: methodOpen 0.4s ease;
+}
+@keyframes methodOpen {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: none; }
+}
 .method-desc {
   font-style: italic;
   color: var(--gold-pale);
@@ -894,13 +951,13 @@ h1.brand {
    ══════════════════════════════════════════ */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 2.2rem 2rem;
   font-size: 0.78rem;
-  color: var(--gold);
-  opacity: 0.45;
+  color: rgba(201,160,64,0.55);
   font-family: 'Cinzel', serif;
   letter-spacing: 0.1em;
   background: #03071a;
+  border-top: 1px solid rgba(201,160,64,0.12);
   position: relative;
   z-index: 2;
 }
@@ -919,6 +976,103 @@ footer {
 }
 
 /* ══════════════════════════════════════════
+   REFINAMENTOS (v3)
+   ══════════════════════════════════════════ */
+
+/* Seleção de texto e scrollbar no tema */
+::selection {
+  background: rgba(201,160,64,0.35);
+  color: var(--gold-pale);
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb {
+  background: rgba(201,160,64,0.35);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(201,160,64,0.6); }
+
+/* Âncoras não ficam escondidas atrás da nav fixa */
+section, #solicitar-form { scroll-margin-top: 4.5rem; }
+
+/* Moldura interna — assinatura visual "carta de tarot" */
+.price-card, .step-card, .method-card, .form-container,
+.contact-box, .urgency-note {
+  position: relative;
+}
+.price-card::after, .step-card::after, .method-card::after,
+.form-container::after, .contact-box::after, .urgency-note::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(201,160,64,0.12);
+  pointer-events: none;
+  transition: border-color 0.3s;
+}
+.price-card:hover::after, .step-card:hover::after,
+.method-card:hover::after {
+  border-color: rgba(201,160,64,0.32);
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, .method-header:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
+.method-header:focus-visible { outline-offset: -4px; }
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  z-index: 300;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 30%, #16305e 0%, var(--navy) 100%);
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 16px rgba(201,160,64,0.25);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.whatsapp-float svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--gold-light);
+  transition: fill 0.3s;
+}
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: var(--gold-pale);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55), 0 0 26px rgba(201,160,64,0.45);
+}
+.whatsapp-float:hover svg { fill: var(--gold-pale); }
+
+/* Footer com ornamento */
+footer::before {
+  content: '☽ ✦ ☾';
+  display: block;
+  font-size: 0.95rem;
+  letter-spacing: 0.4em;
+  margin-bottom: 0.7rem;
+}
+
+/* Movimento reduzido — respeita a preferência do sistema */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ══════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -926,7 +1080,19 @@ footer {
   .deck-img-panel { min-height: 200px; }
 }
 @media (max-width: 600px) {
-  nav { gap: 0.8rem; font-size: 10px; }
+  nav {
+    gap: 1.2rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.9rem 1.2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { font-size: 10.5px; white-space: nowrap; }
   .methods-grid { grid-template-columns: 1fr; }
   .logo-emblem { width: 140px; height: 140px; }
+  .form-container { padding: 1.8rem 1.3rem; }
+  .whatsapp-float { width: 50px; height: 50px; }
 }

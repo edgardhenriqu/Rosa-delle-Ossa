@@ -60,14 +60,71 @@ function toggleMethod(card) {
     if (body) {
       body.classList.remove('open');
     }
+
+    const header = item.querySelector('.method-header');
+    if (header) {
+      header.setAttribute('aria-expanded', 'false');
+    }
   });
 
   if (!isOpen) {
     const body = card.querySelector('.method-body');
+    const header = card.querySelector('.method-header');
 
     card.classList.add('open');
     body.classList.add('open');
+
+    if (header) {
+      header.setAttribute('aria-expanded', 'true');
+    }
   }
+}
+
+/**
+ * Make method cards operable by keyboard (Enter / Space).
+ */
+function initMethodA11y() {
+  document.querySelectorAll('.method-card').forEach((card) => {
+    const header = card.querySelector('.method-header');
+    if (!header) return;
+
+    header.setAttribute('role', 'button');
+    header.setAttribute('tabindex', '0');
+    header.setAttribute('aria-expanded', 'false');
+
+    header.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMethod(card);
+      }
+    });
+  });
+}
+
+/**
+ * Highlight the nav link of the section currently in view (scrollspy).
+ */
+function initScrollSpy() {
+  const links = document.querySelectorAll('nav a[href^="#"]');
+  if (!links.length) return;
+
+  const map = new Map();
+  links.forEach((link) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) map.set(target, link);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        links.forEach((l) => l.classList.remove('active'));
+        const link = map.get(entry.target);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  map.forEach((_, target) => observer.observe(target));
 }
 
 /**
@@ -250,9 +307,16 @@ function initOrderForm() {
 
 /* ── Initialise on DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
-  initStars();
-  initParallax();
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reducedMotion) {
+    initStars();
+    initParallax();
+  }
+
   initScrollReveal();
   initStaggeredReveal();
   initOrderForm();
+  initMethodA11y();
+  initScrollSpy();
 });
