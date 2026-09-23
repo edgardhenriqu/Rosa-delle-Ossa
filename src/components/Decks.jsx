@@ -3,20 +3,20 @@ import { DECKS } from '../data/site';
 
 export default function Decks() {
   return (
-    <section id="baralhos">
+    <section id="baralhos" aria-labelledby="baralhos-titulo">
       <div className="section-inner" style={{ textAlign: 'center' }}>
-        <Reveal as="h2" className="section-title">
+        <Reveal as="h2" id="baralhos-titulo" className="section-title">
           Baralhos Utilizados
         </Reveal>
         <Reveal as="p" className="section-subtitle">
           Uma coleção cuidadosamente escolhida para cada leitura
         </Reveal>
 
-        <Reveal className="deck-grid">
+        <Reveal as="ul" className="deck-grid">
           {DECKS.map((deck) => (
-            <span className="deck-pill" key={deck}>
+            <li className="deck-pill" key={deck}>
               {deck}
-            </span>
+            </li>
           ))}
         </Reveal>
       </div>

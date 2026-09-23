@@ -3,9 +3,9 @@ import { CONTACT } from '../data/site';
 
 export default function Contact() {
   return (
-    <section id="contato">
+    <section id="contato" aria-labelledby="contato-titulo">
       <div className="section-inner">
-        <Reveal as="h2" className="section-title">
+        <Reveal as="h2" id="contato-titulo" className="section-title">
           Entre em Contato
         </Reveal>
         <Reveal as="p" className="section-subtitle">

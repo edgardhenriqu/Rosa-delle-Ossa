@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 const TOTAL_STARS = 180;
@@ -26,10 +26,13 @@ function buildStars(total) {
 
 export default function CosmicBackground() {
   const reducedMotion = usePrefersReducedMotion();
-  const stars = useMemo(
-    () => (reducedMotion ? [] : buildStars(TOTAL_STARS)),
-    [reducedMotion],
-  );
+
+  /* As estrelas são sorteadas só no navegador: o HTML pré-renderizado sai
+     sem elas (mais leve) e a hidratação não diverge por causa do sorteio. */
+  const [stars, setStars] = useState([]);
+  useEffect(() => {
+    setStars(reducedMotion ? [] : buildStars(TOTAL_STARS));
+  }, [reducedMotion]);
 
   return (
     <>

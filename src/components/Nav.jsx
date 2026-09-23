@@ -7,12 +7,13 @@ export default function Nav() {
   const activeId = useScrollSpy(SECTION_IDS);
 
   return (
-    <nav>
+    <nav aria-label="Seções do site">
       {NAV_LINKS.map(({ href, label }) => (
         <a
           key={href}
           href={href}
           className={href.slice(1) === activeId ? 'active' : undefined}
+          aria-current={href.slice(1) === activeId ? 'location' : undefined}
         >
           {label}
         </a>

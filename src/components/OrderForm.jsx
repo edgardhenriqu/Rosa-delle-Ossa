@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Reveal from './Reveal';
 import { QUESTION_AMOUNTS, QUESTION_TIRAGENS, URGENCY_FEE } from '../data/site';
 import { METHODS, methodOptionValue, methodsByGroup } from '../data/methods';
+import { onTiragemRequest } from '../lib/orderEvents';
 import { basePrice, formatPrice, needsQuestionAmount, totalPrice } from '../lib/pricing';
 import { orderLink } from '../lib/whatsapp';
 
@@ -38,6 +39,9 @@ export default function OrderForm() {
       ...(field === 'tiragem' ? { amount: '' } : null),
     }));
   }
+
+  /* "Solicitar esta tiragem" nos métodos já chega com a tiragem escolhida. */
+  useEffect(() => onTiragemRequest((value) => update('tiragem', value)), []);
 
   function handleSubmit(e) {
     e.preventDefault();

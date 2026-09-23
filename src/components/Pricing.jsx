@@ -4,26 +4,37 @@ import { methodsByGroup } from '../data/methods';
 
 function MethodPriceGrid({ methods }) {
   return (
-    <div className="methods-price-grid">
+    <ul className="methods-price-grid">
       {methods.map((method) => (
-        <div className="method-price-item" key={method.id}>
-          <span className="m-name">{method.name}</span>
-          <span className="m-price">R${method.price}</span>
-        </div>
+        <li key={method.id}>
+          <a
+            className="method-price-item"
+            href={`#${method.id}`}
+            aria-label={`${method.name}, R$${method.price} — ver estrutura do método`}
+          >
+            <span className="m-name">{method.name}</span>
+            <span className="m-price">R${method.price}</span>
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
 export default function Pricing() {
   return (
-    <section id="precos">
+    <section id="precos" aria-labelledby="precos-titulo">
       <div className="section-inner">
-        <Reveal as="h2" className="section-title">
+        <Reveal as="h2" id="precos-titulo" className="section-title">
           Menu de Tiragens
         </Reveal>
         <Reveal as="p" className="section-subtitle">
           Escolha a leitura ideal para o seu momento
+        </Reveal>
+        <Reveal as="p" className="section-lead">
+          Você pode fazer suas próprias perguntas — o valor depende da
+          quantidade e do baralho — ou escolher um método com estrutura pronta
+          para amor, espiritualidade, autoconhecimento, finanças ou decisões.
         </Reveal>
 
         {QUESTION_TIRAGENS.map((tiragem) => (
@@ -57,6 +68,15 @@ export default function Pricing() {
             Combino o Baralho Cigano/Lenormand + um Oráculo Especial
           </p>
           <MethodPriceGrid methods={methodsByGroup('especiais')} />
+        </Reveal>
+
+        <Reveal className="section-ctas">
+          <a href="#metodos" className="cta-btn">
+            Ver métodos em detalhe
+          </a>
+          <a href="#solicitar-form" className="cta-btn primary">
+            Solicitar Leitura
+          </a>
         </Reveal>
       </div>
     </section>

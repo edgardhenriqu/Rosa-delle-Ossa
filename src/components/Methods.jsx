@@ -1,38 +1,37 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Reveal from './Reveal';
-import { METHODS } from '../data/methods';
+import { METHODS, methodOptionValue } from '../data/methods';
+import { requestTiragem } from '../lib/orderEvents';
+
+const METHOD_IDS = new Set(METHODS.map((m) => m.id));
 
 function MethodCard({ method, open, onToggle, delay }) {
   const bodyId = `method-body-${method.id}`;
 
-  function handleKeyDown(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onToggle();
-    }
-  }
-
   return (
     <Reveal
+      as="article"
+      id={method.id}
       className={open ? 'method-card open' : 'method-card'}
       delay={delay}
       onClick={onToggle}
     >
-      <div
-        className="method-header"
-        role="button"
-        tabIndex={0}
-        aria-expanded={open}
-        aria-controls={bodyId}
-        onKeyDown={handleKeyDown}
-      >
+      <div className="method-header">
         <h3>
-          {method.name}
-          {method.special && <span className="badge-especial">Especial</span>}
+          {/* O clique sobe até o card, que alterna a abertura. */}
+          <button
+            type="button"
+            className="method-toggle"
+            aria-expanded={open}
+            aria-controls={bodyId}
+          >
+            {method.name}
+            {method.special && <span className="badge-especial">Especial</span>}
+          </button>
         </h3>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <span className="m-tag">R${method.price}</span>
-          <span className="toggle-icon">›</span>
+          <span className="toggle-icon" aria-hidden="true">›</span>
         </div>
       </div>
 
@@ -60,6 +59,17 @@ function MethodCard({ method, open, onToggle, delay }) {
         )}
 
         <div className="result-box">{method.result}</div>
+
+        <a
+          href="#solicitar-form"
+          className="cta-btn primary method-cta"
+          onClick={(e) => {
+            e.stopPropagation();
+            requestTiragem(methodOptionValue(method));
+          }}
+        >
+          Solicitar esta tiragem
+        </a>
       </div>
     </Reveal>
   );
@@ -68,10 +78,22 @@ function MethodCard({ method, open, onToggle, delay }) {
 export default function Methods() {
   const [openId, setOpenId] = useState(null);
 
+  /* Links como #templo-afrodite (menu de preços, dúvidas) abrem o card. */
+  useEffect(() => {
+    const openFromHash = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (METHOD_IDS.has(id)) setOpenId(id);
+    };
+
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, []);
+
   return (
-    <section id="metodos">
+    <section id="metodos" aria-labelledby="metodos-titulo">
       <div className="section-inner">
-        <Reveal as="h2" className="section-title">
+        <Reveal as="h2" id="metodos-titulo" className="section-title">
           Métodos em Detalhe
         </Reveal>
         <Reveal as="p" className="section-subtitle">

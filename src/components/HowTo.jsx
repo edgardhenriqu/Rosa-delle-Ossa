@@ -60,9 +60,9 @@ function StepBody({ step }) {
 
 export default function HowTo() {
   return (
-    <section id="como">
+    <section id="como" aria-labelledby="como-titulo">
       <div className="section-inner">
-        <Reveal as="h2" className="section-title">
+        <Reveal as="h2" id="como-titulo" className="section-title">
           Como Solicitar uma Tiragem
         </Reveal>
         <Reveal as="p" className="section-subtitle">

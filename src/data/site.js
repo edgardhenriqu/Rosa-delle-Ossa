@@ -4,8 +4,17 @@
    passo a passo e baralhos utilizados.
    ══════════════════════════════════════════ */
 
-import ciganoDeck from '../assets/imagens/cigano_deck.png';
-import tarotHero from '../assets/imagens/tarot_hero.png';
+import ciganoDeck from '../assets/imagens/cigano_deck.webp';
+import tarotHero from '../assets/imagens/tarot_hero.webp';
+
+/** Endereço canônico do site — usado em metadados, JSON-LD e sitemap. */
+export const SITE = {
+  name: 'Rosa delle Ossa',
+  url: 'https://www.rosadelleossa.com/',
+  owner: 'Maria Luiza Rosabone',
+  description:
+    'Tiragens de Tarot, Lenormand e Oráculos para amor, espiritualidade, autoconhecimento, finanças e decisões, com pedido e atendimento pelo WhatsApp.',
+};
 
 export const CONTACT = {
   whatsappNumber: '5511947694358',
@@ -27,6 +36,7 @@ export const NAV_LINKS = [
   { href: '#precos', label: 'Preços' },
   { href: '#baralhos', label: 'Baralhos' },
   { href: '#metodos', label: 'Métodos' },
+  { href: '#duvidas', label: 'Dúvidas' },
   { href: '#contato', label: 'Contato' },
 ];
 
@@ -99,12 +109,12 @@ export const DECKS = [
 export const SHOWCASE_PANELS = [
   {
     src: tarotHero,
-    alt: 'Cartas de Tarot e Lenormand',
+    alt: 'Cartas de Tarot dispostas sobre veludo azul, entre velas acesas, pétalas de rosa e uma bola de cristal',
     label: 'Tarot · Lenormand · Oráculos',
   },
   {
     src: ciganoDeck,
-    alt: 'Baralho Cigano',
+    alt: 'Cartas do Baralho Cigano enfileiradas sobre veludo azul, ao lado de uma vela e uma bola de cristal',
     label: 'Baralho Cigano · Sibila Italiana',
   },
 ];

@@ -5,12 +5,19 @@ export default function DeckShowcase() {
     <div className="deck-showcase">
       <div className="deck-showcase-inner">
         {SHOWCASE_PANELS.map((panel) => (
-          <div className="deck-img-panel" key={panel.src}>
-            <img src={panel.src} alt={panel.alt} />
-            <div className="panel-overlay">
+          <figure className="deck-img-panel" key={panel.src}>
+            <img
+              src={panel.src}
+              alt={panel.alt}
+              width="1024"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption className="panel-overlay">
               <span className="panel-label">{panel.label}</span>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </div>
