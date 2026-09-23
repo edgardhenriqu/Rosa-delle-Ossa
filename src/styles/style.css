@@ -36,7 +36,7 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    url('../imagens/cosmic_bg.png') center/cover no-repeat,
+    url('../assets/imagens/cosmic_bg.png') center/cover no-repeat,
     radial-gradient(ellipse at 20% 50%, rgba(107,63,160,0.18) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(201,160,64,0.08) 0%, transparent 50%),
     var(--navy);
@@ -206,7 +206,7 @@ section { position: relative; z-index: 2; }
 .hero-bg-image {
   position: absolute;
   inset: 0;
-  background: url('../imagens/tarot_hero.png') center/cover no-repeat;
+  background: url('../assets/imagens/tarot_hero.png') center/cover no-repeat;
   opacity: 0.18;
   z-index: 0;
   transform: scale(1.05);
@@ -642,6 +642,7 @@ h1.brand {
   margin-bottom: 0.5rem;
 }
 .form-group input[type="text"],
+.form-group input[type="date"],
 .form-group select,
 .form-group textarea {
   width: 100%;
@@ -655,10 +656,18 @@ h1.brand {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--gold);
   box-shadow: 0 0 10px rgba(201,160,64,0.2);
+}
+.form-group input[type="date"] {
+  color-scheme: dark;
+}
+.form-group input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 .checkbox-group label {
   display: flex;
@@ -706,7 +715,7 @@ h1.brand {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../imagens/lenormand_deck.png') center/cover no-repeat;
+  background: url('../assets/imagens/lenormand_deck.png') center/cover no-repeat;
   opacity: 0.08;
   z-index: 0;
 }
@@ -750,7 +759,7 @@ h1.brand {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../imagens/crystal_ball.png') center 30%/cover no-repeat;
+  background: url('../assets/imagens/crystal_ball.png') center 30%/cover no-repeat;
   opacity: 0.05;
   z-index: 0;
 }
@@ -881,7 +890,7 @@ h1.brand {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../imagens/cigano_deck.png') center/cover no-repeat;
+  background: url('../assets/imagens/cigano_deck.png') center/cover no-repeat;
   opacity: 0.06;
   z-index: 0;
 }
