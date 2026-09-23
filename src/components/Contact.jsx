@@ -35,6 +35,15 @@ export default function Contact() {
             </div>
           </div>
 
+          <div className="contact-item">
+            <div>
+              <p className="contact-label">Instagram</p>
+              <a href={CONTACT.instagramLink} target="_blank" rel="noopener noreferrer">
+                {CONTACT.instagram}
+              </a>
+            </div>
+          </div>
+
           <div className="pix-block">
             <p className="contact-label">Pagamento via PIX</p>
             <p className="pix-key">{CONTACT.pixKey}</p>

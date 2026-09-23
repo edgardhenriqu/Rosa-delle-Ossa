@@ -13,6 +13,8 @@ export const CONTACT = {
   whatsappLink: 'https://wa.me/5511947694358',
   tiktok: '@rosa.delleossa',
   tiktokLink: 'https://www.tiktok.com/@rosa.delleossa',
+  instagram: '@rosadelleossa',
+  instagramLink: 'https://www.instagram.com/rosadelleossa',
   pixKey: '(11) 94769-4358',
   pixOwner: 'Maria Luiza Rosabone',
 };
