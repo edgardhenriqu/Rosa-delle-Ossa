@@ -61,13 +61,17 @@ const og = await sharp(background)
   .toFile(path.join(PUBLIC, 'og-image.jpg'));
 console.log(`og-image.jpg: ${og.width}x${og.height}, ${(og.size / 1024).toFixed(0)} KB`);
 
-/* Ícones: favicon e apple-touch-icon a partir do logo. */
+/* Ícones: favicon e apple-touch-icon a partir do logo.
+   O Google exige que o favicon seja um múltiplo de 48px quadrado
+   (48, 96, 144, 192…) — por isso nada de 16 ou 32px aqui.
+   https://developers.google.com/search/docs/appearance/favicon-in-search */
 /* O iOS preenche transparência com preto, então o apple-touch-icon
    recebe o fundo azul-marinho do site. */
 const NAVY = { r: 8, g: 14, b: 42, alpha: 1 };
 
 for (const [output, size, opaque] of [
-  ['favicon-32.png', 32, false],
+  ['favicon-48.png', 48, false],
+  ['favicon-96.png', 96, false],
   ['favicon-192.png', 192, false],
   ['apple-touch-icon.png', 180, true],
 ]) {
